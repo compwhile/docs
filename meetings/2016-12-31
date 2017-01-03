@@ -1,0 +1,37 @@
+# Kick off
+Date: 31-12-2016
+
+**Keypoint**: Web IDE for Computability Theory Course
+
+## Agenda
+- Agree on project name: compwhile.
+- Discuess the key points for the project.
+- Open a new GitHub repository under MIT license.
+- Discuss the main components.
+- Action items for next meeting.
+
+## Suggestion for main components
+- Core
+  - **editor** - A web component for editing supported programs.
+  - **while-syntax-highlighter(whileSrc)**
+    - Returns a formatted while source code.
+  - **while-tokenizer(whileSrc)**
+    - Returns an array of whileTokens.
+    - Example: https://jsfiddle.net/yckart/mb8sL3aa/
+  - **while-ast-builder(whileTokens)**
+    - Returns a whileAST object or an error.
+  - **while-executer(whileAST, input)**
+    - Has  many handlers for each type of node.
+  - **while-highlighter(string)**
+    - Returns a formatted string.
+- Visualizers
+  - **while-ast-visualizer(whileAST)** returns a svg.
+  - **tree-notation-visualizer(treeStr)** returns a svg.
+  - **list-notation-visualizer(listStr)** returns a svg.
+
+### Action items
+1. Research about an open source syntax highlighter engine based on custom rules.
+1. Research about an open source tokenzier engine based on custom rules.
+2. Schedule a session about WHILE, Goto, F, F+ @HagaiNuriel.
+3. If we wish to allow quoting of other programs, we need to support tabs (one
+   tab per program). Need to decide after some effort estimation.
