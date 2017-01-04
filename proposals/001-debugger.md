@@ -71,5 +71,6 @@ Core features:
 
 ## References
 
+* http://www.yolinux.com/TUTORIALS/GDB-Commands.html
 * https://developer.chrome.com/devtools
 * https://github.com/ChromeDevTools/devtools-frontend
