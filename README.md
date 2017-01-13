@@ -1,3 +1,5 @@
+![alt text](https://github.com/compwhile/compwhile/raw/master/logo.png "compwhile")
+
 # docs
 
 This repository is primarily for the use of the compwhile core project collaborators.
