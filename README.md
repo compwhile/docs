@@ -8,6 +8,7 @@ The compwhile core library is wrapped inside a web application to create a power
 
 ## Documents
 Inside this repository you'll find:
+
  * **requirements** - the main document to describe the features of this
    project.
  * **design** - the main document to describe the high level design and
