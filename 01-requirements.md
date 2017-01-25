@@ -10,6 +10,7 @@
 * The project is open source, and it's goal is to enhance and level up your study of programming languages in Computability Theory course.
 * compwhile aims to supprt WHILE and other theoretical languages presented in the book Computability and Complexity from a Programming Perspective (1997) by Neil Jones.
 * MVP of this project: extensible web IDE for WHILE.
+
 ## 2. Features
 * Edit your programs within a web IDE - no installation required.
 * Syntax highlighting and error checking.
@@ -19,7 +20,11 @@
 * Save your program inside the web IDE to continue later.
 * Visualize your input and output of trees.
 * Solve programming exercises with immediate feedback.
-## 3. Widgets
+
+## 3. Wireframe
+![alt text](https://github.com/compwhile/docs/raw/master/wireframe.png "compwhile")
+
+## 4. Widgets
 * File structure widget
   * This widget includes a tree structure of all saved programs and exercises.
   * All programs and exercises can be saved with the "save all" button.
@@ -73,7 +78,8 @@
   * Shows the output of the compiler after clicking Build in the Buttons
     widget.
   * Shows descriptive errors or build successfull messages.
-## 4. Basic editing flow
+
+## 5. Basic editing flow
 * The user enters the compwhile.io website for the first time.
 * A default program to be loaded into the user programs is "comp.while".
   * If there are no other user-programs, it will be the selected one.
@@ -92,10 +98,12 @@
 * The user clicks the Run button.
   * I/O tab in the Utilities widget contains the output for the execution.
 * The user saves the selected program by clicking Save in the Buttons widget.
-## 5. Edge cases
+
+## 6. Edge cases
 * Run before build automatically triggers the build.
 * Run without changing the default nil input will display a message.
-## 6. v0.1.0 release
+
+## 7. v0.1.0 release
 * First release will support only the WHILE lanaguage and it's core semantics:
   * Evaluation of expressions
   * Execution of commands
@@ -105,7 +113,8 @@
     * Lists
     * True / false
     * Inline procedure expansion
-## 7. Open questions
+
+## 8. Open questions
 * The following features are open questions and (will) have a proposal in the
   proposals folder:
   1. WHILE syntax sugar: case statement
