@@ -98,7 +98,7 @@ d ∈ D                                          # D is the set of all binary tr
 * With the conditional command, C is executed if E is not equal to `nil`,
   otherwise D is executed.
 
-## Supported syntax sugars
+## 6. Supported syntax sugars
 * Boolean values (of type constant, D)
   * `false` - the empty tree `nil`.
   * `true` - the tree `(nil.nil)`.
@@ -121,12 +121,13 @@ d ∈ D                                          # D is the set of all binary tr
   * Example:
 
   ```
+
   succ: read X
-          X := cons nil X           # X := X + 1
+          X := cons nil X               # X := X + 1
         write X
 
   pred: read X
-          X := tl X                 # X := X - 1
+          X := tl X                     # X := X - 1
         write X
 
   add:  read L
@@ -136,12 +137,13 @@ d ∈ D                                          # D is the set of all binary tr
             X := <pred> X;              # remove 1 from X
             Y := <succ> Y               # add 1 to Y
         write Y
+
   ```
 
 * Need to be decided if will be implemented in v0.1.0:
   * Case statement.
 
-## Concrete definitions for compwhile implementation
+## 7. Concrete definitions for compwhile implementation
 * Identifiers
   * No identifier begins with a number.
   * A valid program name should only include ... length ...
@@ -151,7 +153,7 @@ d ∈ D                                          # D is the set of all binary tr
   * Inline-comments are supported, starting from `#` to the rest of the line.
 
 **TBD**
-## Refereneces
+## 8. Refereneces
 1. Bernhard Reus, The WHILE-Language, Limits of Computation From a Programming
    Perspective (pp. 29-63), Spring (2016).
 2. [Computability and Complexity from a Programming Perspective](http://www.diku.dk/~neil/Comp2book.html) (1997) by Neil Jones.
