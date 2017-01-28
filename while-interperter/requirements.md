@@ -51,6 +51,7 @@
       variable.
 * All variables are set to `nil` except `X` which is set to the input value.
 * Example of a program:
+
   ```
   p:  read X
         C
@@ -65,6 +66,7 @@
     * With the support of sequential composition, `C` can be a list of commands
       separated by semicolons.
     * The input variable and the output variable can be the same:
+
     ```
     p:  read X
           C
