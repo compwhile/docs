@@ -7,8 +7,9 @@
 ## 1. Background
 * WHILE is the first programming language to be supported from the first
   release of compwhile.
-* The language has basic imperative programming constructs as well as a rich data
-  type (binary trees).
+* The language is an imperative programming language, therefore its computation
+  is driven forward by commands that are assignments to variables.
+* So support this behaviour, the language has basic imperative programming constructs as well as a rich data type (binary trees).
 * This requirements document is based on multiple sources, listed in the
   references section.
 
