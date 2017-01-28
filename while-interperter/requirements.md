@@ -13,7 +13,14 @@
 * This requirements document is based on multiple sources, listed in the
   references section.
 
-## 2. Expressions
+## 2. comp-WHILE Interperter
+* comp-WHILE is the WHILE interperter in the compwhile project.
+* It takes a WHILE-program and a data value as binary trees.
+* It returns a binary tree as output the value that the program would return when run with the data value as input.
+* The implementation language of comp-WHILE is ECMAScript (also known as
+  JavaScript).
+
+## 3. Expressions
 * An expression of the WHILE-language has value, a binary tree.
 * There are two ways to build an expression (constructors):
     * Empty tree - there is the expression `nil`.
@@ -27,7 +34,7 @@
     * Both `hd` and `tl` do not have any effect on the empty tree (as it does not
       have any subtrees), so it will evaluate again to `nil`.
 
-## 3. Commands
+## 4. Commands
 * There are four types of commands:
     * Assignment
     * Conditional (if-then-else)
@@ -40,7 +47,7 @@
 * Unlike expressions, commands do not produce a value, but have side effects on
   the variables as they can change their values.
 
-## 4. Programs
+## 5. Programs
 * A program consists of:
     * Name.
     * Fixed read statement for passing the input.
@@ -75,7 +82,7 @@ p:  read X
     write X
 ```
 
-## 5. BNF (Backus-Naur-Forn) for WHILE
+## 6. BNF (Backus-Naur-Forn) for WHILE
 ```
 E, F ∈ Expression ::=    X
                        | d                     # constant tree
@@ -98,7 +105,7 @@ d ∈ D                                          # D is the set of all binary tr
 * With the conditional command, C is executed if E is not equal to `nil`,
   otherwise D is executed.
 
-## 6. Supported syntax sugars
+## 7. Supported syntax sugars
 * Boolean values (of type constant, D)
     * `false` - the empty tree `nil`.
     * `true` - the tree `(nil.nil)`.
@@ -141,7 +148,7 @@ add:  read L
 * Need to be decided if will be implemented in v0.1.0:
     * Case statement (pattern matching).
 
-## 7. Concrete definitions for compwhile implementation
+## 8. Concrete definitions for compwhile implementation
 * Identifiers
     * No identifier begins with a number.
     * A valid program name should only include ... length ...
@@ -151,7 +158,7 @@ add:  read L
     * Inline-comments are supported, starting from `#` to the rest of the line.
 
 **TBD**
-## 8. Refereneces
+## 9. Refereneces
 1. Bernhard Reus, The WHILE-Language, Limits of Computation From a Programming
    Perspective (pp. 29-63), Spring (2016).
 2. [Computability and Complexity from a Programming Perspective](http://www.diku.dk/~neil/Comp2book.html) (1997) by Neil Jones.
