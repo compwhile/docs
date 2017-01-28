@@ -139,7 +139,7 @@ add:  read L
 ```
 
 * Need to be decided if will be implemented in v0.1.0:
-  * Case statement.
+  - Case statement (pattern matching).
 
 ## 7. Concrete definitions for compwhile implementation
 * Identifiers
