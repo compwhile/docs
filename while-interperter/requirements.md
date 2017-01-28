@@ -120,25 +120,23 @@ d ∈ D                                          # D is the set of all binary tr
   * To finish, this command will be replaced by the body of `pp`.
   * Example:
 
-  ```
+```
+succ: read X
+        X := cons nil X               # X := X + 1
+      write X
 
-  succ: read X
-          X := cons nil X               # X := X + 1
-        write X
+pred: read X
+        X := tl X                     # X := X - 1
+      write X
 
-  pred: read X
-          X := tl X                     # X := X - 1
-        write X
-
-  add:  read L
-          X := hd L;                    # X gets the first number
-          Y := tl L;                    # Y gets the second number
-          while X do                    # while (x > 0)
-            X := <pred> X;              # remove 1 from X
-            Y := <succ> Y               # add 1 to Y
-        write Y
-
-  ```
+add:  read L
+        X := hd L;                    # X gets the first number
+        Y := tl L;                    # Y gets the second number
+        while X do                    # while (x > 0)
+          X := <pred> X;              # remove 1 from X
+          Y := <succ> Y               # add 1 to Y
+      write Y
+```
 
 * Need to be decided if will be implemented in v0.1.0:
   * Case statement.
