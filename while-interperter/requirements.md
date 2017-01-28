@@ -139,16 +139,16 @@ add:  read L
 ```
 
 * Need to be decided if will be implemented in v0.1.0:
-  - Case statement (pattern matching).
+    * Case statement (pattern matching).
 
 ## 7. Concrete definitions for compwhile implementation
 * Identifiers
-  * No identifier begins with a number.
-  * A valid program name should only include ... length ...
-  * A valid identifier for a variable should only include ... length ...
+    * No identifier begins with a number.
+    * A valid program name should only include ... length ...
+    * A valid identifier for a variable should only include ... length ...
 * Comments
-  * A line can begin with `#` to make that line a comment.
-  * Inline-comments are supported, starting from `#` to the rest of the line.
+    * A line can begin with `#` to make that line a comment.
+    * Inline-comments are supported, starting from `#` to the rest of the line.
 
 **TBD**
 ## 8. Refereneces
