@@ -97,6 +97,24 @@ d ∈ D                                          # D is the set of all binary tr
 * With the conditional command, C is executed if E is not equal to `nil`,
   otherwise D is executed.
 
+## Supported syntax sugars
+* Boolean values (of type constant, D)
+  * `false` - the empty tree `nil`.
+  * `true` - the tree `(nil.nil)`.
+* Partial if statement (of type Command)
+  * `if E then C` - the command `if E then C else X := X`.
+* List (of type Expression)
+  * `list E₁ E₂ E₃` - the expression `(cons E₁ (cons E₂ (cons E₃ nil)))` (can
+    be any n elements).
+* Inline procedure expansion
+  * Given a program `p`, the program `q` can use the command `B := p A`.
+  * If `X` and `Y` are the input and output variables in `p`, the interpreter will make a copy `pp` of the body of `p` where `X` and `Y` are replaced by `A` and `B`, respectively.
+  * Furtheremore, all variables in `pp` and renamed so that no variable of `pp`
+    other then `A` and `B` occurs in `q`.
+  * To finish, this command will be replaced by the body of `pp`.
+* Need to be decided if will be implemented in v0.1.0:
+  * Case statement.
+
 ## Concrete definitions for compwhile implementation
 * Identifiers
   * No identifier begins with a number.

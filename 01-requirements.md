@@ -110,9 +110,12 @@
   * Variables and constants
   * Comments
   * Syntax sugar:
-    * Lists
     * True / false
+    * Partial if statement (of type command)
+    * Lists
     * Inline procedure expansion
+* Detailed requirements can be found in the [WHILE-interperter
+  requirements](while-interperter/requirements.md) document.
 
 ## 8. Open questions
 * The following features are open questions and (will) have a proposal in the
