@@ -57,6 +57,7 @@
         C
       write Y
   ```
+
   * Where:
     * `p` denotes any valid program name.
     * `X` denotes any valid variable name (the variable will store the input).
