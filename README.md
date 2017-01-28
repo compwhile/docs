@@ -37,6 +37,7 @@ compwhile is written with extensibility in mind - the plugins system allows you 
 
 ### Project repositories
 The project has the following repositories on GitHub:
+
 * [compwhile](https://github.com/compwhile/compwhile) - main repository for for the code library.
 * [while-true-learn](https://github.com/compwhile/while-true-learn) - programming exercises.
 * [docs](https://github.com/compwhile/docs) - project documentation and management.
