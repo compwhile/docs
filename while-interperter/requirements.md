@@ -7,7 +7,7 @@
 ## 1. Background
 * WHILE is the first programming language to be supported from the first
   release of compwhile.
-* The language is an imperative programming language, therefore its computation
+* The language is a procedural imperative programming language, therefore its computation
   is driven forward by commands that are assignments to variables.
 * So support this behaviour, the language has basic imperative programming constructs as well as a rich data type (binary trees).
 * This requirements document is based on multiple sources, listed in the
@@ -16,48 +16,48 @@
 ## 2. Expressions
 * An expression of the WHILE-language has value, a binary tree.
 * There are two ways to build an expression (constructors):
-  * Empty tree - there is the expression `nil`.
-  * Nonempty tree - there is the expressions `cons E F` where `E` and `F` are
+    * Empty tree - there is the expression `nil`.
+    * Nonempty tree - there is the expressions `cons E F` where `E` and `F` are
     also expressions (denoting binary trees).
 * There are two ways to disassemble an expression (destructors):
-  * `hd` - short for "head". Disassemble an expression into its left (head)
-    subtree.
-  * `tl` - short for "tail". Disassemble an expression into its right (tail)
-    subtree.
-  * Both `hd` and `tl` do not have any effect on the empty tree (as it does not
-    have any subtrees), so it will evaluate again to `nil`.
+    * `hd` - short for "head". Disassemble an expression into its left (head)
+      subtree.
+    * `tl` - short for "tail". Disassemble an expression into its right (tail)
+      subtree.
+    * Both `hd` and `tl` do not have any effect on the empty tree (as it does not
+      have any subtrees), so it will evaluate again to `nil`.
 
 ## 3. Commands
 * There are four types of commands:
-  * Assignment
-  * Conditional (if-then-else)
-    * This command uses a boolean guard to determine control flow.
-  * While loop
-    * Like conditional, this command also uses a boolean guard to determine control flow.
-  * Sequential composition
-    * This command allows to form statement blocks inside while loops and
-      conditionals.
+    * Assignment
+    * Conditional (if-then-else)
+        * This command uses a boolean guard to determine control flow.
+    * While loop
+        * Like conditional, this command also uses a boolean guard to determine control flow.
+    * Sequential composition
+        * This command allows to form statement blocks inside while loops and
+          conditionals.
 * Unlike expressions, commands do not produce a value, but have side effects on
   the variables as they can change their values.
 
 ## 4. Programs
 * A program consists of:
-  * Name.
-  * Fixed read statement for passing the input.
-    * The passing of the input is via a variable, which is called input
-      variable.
-  * Statement block.
-  * Fixed write statement to return the output.
-    * The passing of the output is via a variable, which is called output
-      variable.
+    * Name.
+    * Fixed read statement for passing the input.
+        * The passing of the input is via a variable, which is called input
+          variable.
+    * Statement block.
+    * Fixed write statement to return the output.
+        * The passing of the output is via a variable, which is called output
+          variable.
 * All variables are set to `nil` except `X` which is set to the input value.
 * Example of a program:
 
-  ```
-  p:  read X
-        C
-      write Y
-  ```
+```
+p:  read X
+      C
+    write Y
+```
 
   * Where:
     * `p` denotes any valid program name.
@@ -65,15 +65,15 @@
     * `Y` denotes any valid variable name (the variable will store the output).
     * `C` denotes a command.
   * Please note:
-    * With the support of sequential composition, `C` can be a list of commands
-      separated by semicolons.
-    * The input variable and the output variable can be the same:
+      * With the support of sequential composition, `C` can be a list of commands
+        separated by semicolons.
+      * The input variable and the output variable can be the same:
 
-    ```
-    p:  read X
-          C
-        write X
-    ```
+```
+p:  read X
+      C
+    write X
+```
 
 ## 5. BNF (Backus-Naur-Forn) for WHILE
 ```
@@ -100,25 +100,25 @@ d ∈ D                                          # D is the set of all binary tr
 
 ## 6. Supported syntax sugars
 * Boolean values (of type constant, D)
-  * `false` - the empty tree `nil`.
-  * `true` - the tree `(nil.nil)`.
+    * `false` - the empty tree `nil`.
+    * `true` - the tree `(nil.nil)`.
 * Partial if statement (of type Command)
-  * `if E then C` - the command `if E then C else X := X`.
+    * `if E then C` - the command `if E then C else X := X`.
 * List (of type Expression)
-  * `list E₁ E₂ E₃` - the expression `(cons E₁ (cons E₂ (cons E₃ nil)))` (can
-    be any n elements).
+    * `list E₁ E₂ E₃` - the expression `(cons E₁ (cons E₂ (cons E₃ nil)))` (can
+      be any n elements).
 * Inline procedure expansion
-  * WHILE-programs can call *other* WHILE-programs by means of macro expansion.
-  * Given a program `p`, the program `q` can use the command `B := <p> A`.
-  * Please note:
-    * Recursive self-calls is not permitted.
-    * Two programs cannot have the same name.
-    * A is of type Variable, NOT Expression.
-  * If `X` and `Y` are the input and output variables in `p`, the interpreter will make a copy `pp` of the body of `p` where `X` and `Y` are replaced by `A` and `B`, respectively.
-  * Furtheremore, all variables in `pp` and renamed so that no variable of `pp`
-    other then `A` and `B` occurs in `q`.
-  * To finish, this command will be replaced by the body of `pp`.
-  * Example:
+    * WHILE-programs can call *other* WHILE-programs by means of macro expansion.
+    * Given a program `p`, the program `q` can use the command `B := <p> A`.
+    * Please note:
+        * Recursive self-calls is not permitted.
+        * Two programs cannot have the same name.
+        * A is of type Variable, NOT Expression.
+    * If `X` and `Y` are the input and output variables in `p`, the interpreter will make a copy `pp` of the body of `p` where `X` and `Y` are replaced by `A` and `B`, respectively.
+    * Furtheremore, all variables in `pp` and renamed so that no variable of `pp`
+        other then `A` and `B` occurs in `q`.
+    * To finish, this command will be replaced by the body of `pp`.
+    * Example:
 
 ```
 succ: read X
