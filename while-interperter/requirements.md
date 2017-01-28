@@ -108,11 +108,36 @@ d ∈ D                                          # D is the set of all binary tr
   * `list E₁ E₂ E₃` - the expression `(cons E₁ (cons E₂ (cons E₃ nil)))` (can
     be any n elements).
 * Inline procedure expansion
-  * Given a program `p`, the program `q` can use the command `B := p A`.
+  * WHILE-programs can call *other* WHILE-programs by means of macro expansion.
+  * Given a program `p`, the program `q` can use the command `B := <p> A`.
+  * Please note:
+    * Recursive self-calls is not permitted.
+    * Two programs cannot have the same name.
+    * A is of type Variable, NOT Expression.
   * If `X` and `Y` are the input and output variables in `p`, the interpreter will make a copy `pp` of the body of `p` where `X` and `Y` are replaced by `A` and `B`, respectively.
   * Furtheremore, all variables in `pp` and renamed so that no variable of `pp`
     other then `A` and `B` occurs in `q`.
   * To finish, this command will be replaced by the body of `pp`.
+  * Example:
+
+  ```
+  succ: read X
+          X := cons nil X           # X := X + 1
+        write X
+
+  pred: read X
+          X := tl X                 # X := X - 1
+        write X
+
+  add:  read L
+          X := hd L;                    # X gets the first number
+          Y := tl L;                    # Y gets the second number
+          while X do                    # while (x > 0)
+            X := <pred> X;              # remove 1 from X
+            Y := <succ> Y               # add 1 to Y
+        write Y
+  ```
+
 * Need to be decided if will be implemented in v0.1.0:
   * Case statement.
 
