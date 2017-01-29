@@ -17,8 +17,14 @@
 * comp-WHILE is the WHILE interperter in the compwhile project.
 * It takes a WHILE-program and a data value as binary trees.
 * It returns a binary tree as output the value that the program would return when run with the data value as input.
-* The implementation language of comp-WHILE is ECMAScript (also known as
-  JavaScript).
+* The implementation language of comp-WHILE is ECMAScript (also known as JavaScript).
+* The main reason we chose to run WHILE programs with an interperter (and not to
+  compile them to JavaScript, altough this may be supported in the future) is to gain
+  control over the execution of the program. This allows comp-WHILE to be able to
+  support interesting features in the future:
+    * Debugging - Live interaction with the programmer to execute the program
+      in steps and get a visual view of the current state of all variables.
+    * Profiling - Gathering information about the behaviour of the program.
 
 ## 3. Expressions
 * An expression of the WHILE-language has value, a binary tree.
