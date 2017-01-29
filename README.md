@@ -9,9 +9,9 @@ The compwhile core library is wrapped inside a web application to create a power
 ## Documents
 Inside this repository you'll find:
 
- * **requirements** - the main document to describe the features of this
+ * **[requirements](01-requirements.md)** - the main document to describe the features of this
    project.
- * **design** - the main document to describe the high level design and
+ * **[design](02-design.md)** - the main document to describe the high level design and
    architecutre of this project.
  * **meetings** - meeting notes.
  * **proposals** - documents that describe proposals for future features of compwhile.
