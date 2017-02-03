@@ -35,8 +35,7 @@ compwhile is written with extensibility in mind - the plugins system allows you 
 
 ### Integrations
 * [compwhile on taiga.io](https://tree.taiga.io/project/elizehavi-compwhile) - Agile project management platform for compwhile.
-* [compwhile on Slack](https://compwhile.slack.com) - Instant messaging platform with channels on: GitHub updates, taiga updates, jenkins builds, project management.
-* [jenkins](https://tree.taiga.io/project/elizehavi-compwhile) - TBD
+* [compwhile on Slack](https://compwhile.slack.com) - Instant messaging platform with channels on: GitHub updates, taiga updates and project management.
 
 ### Project repositories
 The project has the following repositories on GitHub:
@@ -58,5 +57,5 @@ The project has the following repositories on GitHub:
 ## Inspired by
 [Computability and Complexity from a Programming Perspective](http://www.diku.dk/~neil/Comp2book.html) (1997) by Neil Jones.
 
-### License
+## License
 MIT
